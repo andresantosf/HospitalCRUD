@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,700;1,200;1,800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/button.css">
+    <link rel="stylesheet" href="css/records.css">
+    <link rel="stylesheet" href="css/popup.css">
+    <script src="main.js" defer></script>
+    <title>Cadastro de Paciente</title>
+</head>
+
+<body>
+    <header>
+        <h1 class="header-title">Cadastro de Paciente</h1>
+    </header>
+    <main>
+        <button class="button blue" id="pacientRegister"><i class="material-icons">add</i></button>
+        <button class="button green" id="filterPopup"><i class="material-icons">filter_list</i></button>
+        <table id="tableClient" class="records">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Carteira</th>
+                    <th>Especialidade</th>
+                    <th>Plano</th>
+                    <th>Ação</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+        <div class="popup" id="popupRegister">
+            <div class="popup-content">
+                <header class="popup-header">
+                    <h2>Novo paciente</h2>
+                    <span class="popup-close" id="popupClose">&#10006;</span>
+                </header>
+                <form id="form" class="popup-form">
+                    <input type="text" id="nome" data-index="new" class="popup-field" placeholder="Nome do paciente" maxlength="100" required>
+                    <input type="number" id="carteira" class="popup-field" placeholder="Carteira do paciente" required>
+                    <select name="especialidade" id="especialidade" class="popup-field" required>
+                        <option value="" selected disabled>especialidade</option>
+                        <option value="esp1">especialidade 1</option>
+                        <option value="esp2">especialidade 2</option>
+                        <option value="esp3">especialidade 3</option>
+                    </select>
+                    <select name="plano" id="plano" class="popup-field" required>
+                        <option value="" selected disabled>plano</option>
+                        <option value="p1">plano 1</option>
+                        <option value="p2">plano 2</option>
+                        <option value="p3">plano 3</option>
+                    </select>
+                   
+                </form>
+                <footer class="popup-footer">
+                    <button id="salvar" class="button green"><i class="material-icons">save</i></button>
+                </footer>
+            </div>
+        </div>
+
+
+        <div class="popup" id="popupFilter">
+            <div class="popup-content">
+                <header class="popup-header">
+                    <h2>Filtrar</h2>
+                    <span class="popup-close" id="popup-close">&#10006;</span>
+                </header>
+                <form id="form" class="popup-form">
+                    <input type="text" id="nomeFilter" data-index="new" class="popup-field" placeholder="Nome do paciente" maxlength="100">
+                    <input type="text" id="carteiraFilter" class="popup-field" placeholder="Carteira do paciente">
+                    <select name="especialidade" id="especialidadeFilter" class="popup-field" >
+                        <option value="" selected disabled>especialidade</option>
+                        <option value="esp1">especialidade 1</option>
+                        <option value="esp2">especialidade 2</option>
+                        <option value="esp3">especialidade 3</option>
+                    </select>
+                    <select name="plano" id="planoFilter" class="popup-field" >
+                        <option value="" selected disabled>plano</option>
+                        <option value="p1">plano 1</option>
+                        <option value="p2">plano 2</option>
+                        <option value="p3">plano 3</option>
+                    </select>
+                </form>
+                <footer class="popup-footer">
+                    <button id="filter" class="button green"><i class="material-icons">filter_list</i></button>
+                    <button id="reset" class="reset button blue"><i class="material-icons">replay</i></button>
+                </footer>
+                
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
